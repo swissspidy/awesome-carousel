@@ -1,9 +1,5 @@
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
- */
-import { __ } from '@wordpress/i18n';
+import { BentoBaseCarousel } from '@bentoproject/base-carousel/react';
+import '@bentoproject/base-carousel/styles.css';
 
 /**
  * React hook that is used to mark the block wrapper element.
@@ -30,12 +26,24 @@ import './editor.scss';
  * @return {WPElement} Element to render.
  */
 export default function Edit() {
+	const images = [
+			'https://images.unsplash.com/photo-1632746976199-ccd0dd828368?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80',
+			'https://images.unsplash.com/photo-1540270776932-e72e7c2d11cd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80',
+			'https://images.unsplash.com/photo-1539081034274-b9991e9829d3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80',
+			'https://images.unsplash.com/photo-1505299916137-b69793a66907?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80',
+	];
+
 	return (
-		<p {...useBlockProps()}>
-			{__(
-				'Awesome Carousel – hello from the editor!',
-				'awesome-carousel'
-			)}
-		</p>
+		<div {...useBlockProps()}>
+			<div className="awesome-carousel-wrapper">
+				<BentoBaseCarousel autoAdvance={false} loop={false} snap={true}>
+					{images.map((image) => {
+						return (
+								<img key={image} src={image} width={1200} height={800} alt="" />
+						)
+					})}
+				</BentoBaseCarousel>
+			</div>
+		</div>
 	);
 }

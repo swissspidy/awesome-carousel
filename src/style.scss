@@ -10,3 +10,8 @@
 	color: #fff;
 	padding: 2px;
 }
+
+.wp-block-create-block-awesome-carousel .awesome-carousel-wrapper,
+.wp-block-create-block-awesome-carousel .awesome-carousel-wrapper > div {
+	aspect-ratio: 1200/800
+}
