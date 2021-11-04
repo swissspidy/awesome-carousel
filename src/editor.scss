@@ -3,3 +3,11 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
+
+.awesome-carousel-buttons {
+	margin-top: 20px;
+}
+
+.awesome-carousel-buttons > * + * {
+	margin-left: 20px;
+}

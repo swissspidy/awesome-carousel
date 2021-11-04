@@ -2,6 +2,7 @@ import { BentoBaseCarousel } from '@bentoproject/base-carousel/react';
 import '@bentoproject/base-carousel/styles.css';
 
 import { createRef } from '@wordpress/element';
+import { Button } from '@wordpress/components';
 
 /**
  * React hook that is used to mark the block wrapper element.
@@ -37,6 +38,9 @@ export default function Edit() {
 
 	const ref = createRef();
 
+	const goToNextSlide = () => ref.current.next();
+	const goToPreviousSlide = () => ref.current.prev();
+
 	return (
 		<div {...useBlockProps()}>
 			<div className="awesome-carousel-wrapper">
@@ -47,6 +51,10 @@ export default function Edit() {
 						)
 					})}
 				</BentoBaseCarousel>
+			</div>
+			<div className="awesome-carousel-buttons">
+<Button isSecondary onClick={goToPreviousSlide}>{'Previous'}</Button>
+<Button isSecondary onClick={goToNextSlide}>{'Next'}</Button>
 			</div>
 		</div>
 	);
