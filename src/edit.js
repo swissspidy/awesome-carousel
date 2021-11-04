@@ -1,6 +1,8 @@
 import { BentoBaseCarousel } from '@bentoproject/base-carousel/react';
 import '@bentoproject/base-carousel/styles.css';
 
+import { createRef } from '@wordpress/element';
+
 /**
  * React hook that is used to mark the block wrapper element.
  * It provides all the necessary props like the class name.
@@ -33,10 +35,12 @@ export default function Edit() {
 			'https://images.unsplash.com/photo-1505299916137-b69793a66907?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80',
 	];
 
+	const ref = createRef();
+
 	return (
 		<div {...useBlockProps()}>
 			<div className="awesome-carousel-wrapper">
-				<BentoBaseCarousel autoAdvance={false} loop={false} snap={true}>
+				<BentoBaseCarousel ref={ref} autoAdvance={false} loop={false} snap={true}>
 					{images.map((image) => {
 						return (
 								<img key={image} src={image} width={1200} height={800} alt="" />
