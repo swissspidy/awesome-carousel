@@ -29,13 +29,6 @@ import './editor.scss';
  * @return {WPElement} Element to render.
  */
 export default function Edit() {
-	const images = [
-			'https://images.unsplash.com/photo-1632746976199-ccd0dd828368?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80',
-			'https://images.unsplash.com/photo-1540270776932-e72e7c2d11cd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80',
-			'https://images.unsplash.com/photo-1539081034274-b9991e9829d3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80',
-			'https://images.unsplash.com/photo-1505299916137-b69793a66907?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80',
-	];
-
 	const ref = createRef();
 
 	const goToNextSlide = () => ref.current.next();
@@ -45,11 +38,10 @@ export default function Edit() {
 		<div {...useBlockProps()}>
 			<div className="awesome-carousel-wrapper">
 				<BentoBaseCarousel ref={ref} autoAdvance={false} loop={false} snap={true}>
-					{images.map((image) => {
-						return (
-								<img key={image} src={image} width={1200} height={800} alt="" />
-						)
-					})}
+					<img src="https://source.unsplash.com/random/1200x800?1" width={1200} height={800} alt="" />
+					<img src="https://source.unsplash.com/random/1200x800?2" width={1200} height={800} alt="" />
+					<img src="https://source.unsplash.com/random/1200x800?3" width={1200} height={800} alt="" />
+					<img src="https://source.unsplash.com/random/1200x800?4" width={1200} height={800} alt="" />
 				</BentoBaseCarousel>
 			</div>
 			<div className="awesome-carousel-buttons">
@@ -59,3 +51,4 @@ export default function Edit() {
 		</div>
 	);
 }
+
