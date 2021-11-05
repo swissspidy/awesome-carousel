@@ -21,6 +21,44 @@
  * @see https://developer.wordpress.org/block-editor/tutorials/block-tutorial/writing-your-first-block-type/
  */
 function create_block_awesome_carousel_block_init() {
-	register_block_type( __DIR__ );
+	register_block_type(
+		__DIR__,
+		array(
+			'render_callback' => 'create_block_awesome_carousel_render_block',
+		)
+	);
 }
+
 add_action( 'init', 'create_block_awesome_carousel_block_init' );
+
+/**
+ * Render callback for the carousel block.
+ *
+ * @param array  $attributes Block attributes.
+ * @param string $content Block content.
+ *
+ * @return string Block content.
+ */
+function create_block_awesome_carousel_render_block( $attributes, $content ) {
+	if ( ! is_admin() ) {
+		wp_enqueue_script( 'awesome-carousel-view' );
+		wp_enqueue_style( 'bento-base-carousel' );
+	}
+
+	return $content;
+}
+
+/**
+ * Registers the scripts and styles for Bento components.
+ *
+ * @return void
+ */
+function create_block_awesome_carousel_register_assets() {
+	wp_register_script( 'bento-runtime', 'https://cdn.ampproject.org/bento.js', array(), false, true );
+	wp_register_script( 'bento-base-carousel', 'https://cdn.ampproject.org/v0/bento-base-carousel-1.0.js', array( 'bento-runtime' ), false, true );
+	wp_register_style( 'bento-base-carousel', 'https://cdn.ampproject.org/v0/bento-base-carousel-1.0.css', array() );
+
+	wp_register_script( 'awesome-carousel-view', plugin_dir_url( __FILE__ ) . 'build/view.js', array( 'bento-base-carousel' ) );
+}
+
+add_action( 'init', 'create_block_awesome_carousel_register_assets' );
