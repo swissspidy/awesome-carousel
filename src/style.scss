@@ -6,6 +6,14 @@
  */
 
 .wp-block-create-block-awesome-carousel .awesome-carousel-wrapper,
-.wp-block-create-block-awesome-carousel .awesome-carousel-wrapper > div {
+.wp-block-create-block-awesome-carousel .awesome-carousel-wrapper > * {
 	aspect-ratio: 1200/800
+}
+
+.awesome-carousel-buttons {
+	margin-top: 20px;
+}
+
+.awesome-carousel-buttons > * + * {
+	margin-left: 20px;
 }
