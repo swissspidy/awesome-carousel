@@ -5,9 +5,9 @@
  * Requires at least: 5.8
  * Requires PHP:      7.0
  * Version:           0.1.0
- * Author:            The WordPress Contributors
- * License:           GPL-2.0-or-later
- * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Author:            Pascal Birchler
+ * License:           Apache License 2.0
+ * License URI:       https://www.apache.org/licenses/LICENSE-2.0
  * Text Domain:       awesome-carousel
  *
  * @package           create-block

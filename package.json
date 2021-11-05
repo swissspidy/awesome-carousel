@@ -2,8 +2,8 @@
 	"name": "awesome-carousel",
 	"version": "0.1.0",
 	"description": "Example block written with ESNext standard and JSX support – build step required.",
-	"author": "The WordPress Contributors",
-	"license": "GPL-2.0-or-later",
+	"author": "Pascal Birchler",
+	"license": "Apache-2.0",
 	"main": "build/index.js",
 	"scripts": {
 		"build": "wp-scripts src/index.js src/view.js",
