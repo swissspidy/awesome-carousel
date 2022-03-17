@@ -15,13 +15,13 @@
 	},
 	"dependencies": {
 		"@bentoproject/base-carousel": "^1.2110212130.2",
-		"@wordpress/block-editor": "^7.0.4",
+		"@wordpress/block-editor": "^8.3.1",
 		"@wordpress/blocks": "^11.1.2",
 		"@wordpress/components": "^19.0.0",
 		"@wordpress/element": "^4.0.3",
 		"@wordpress/i18n": "^4.2.3"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^19.0.0"
+		"@wordpress/scripts": "^22.2.1"
 	}
 }
